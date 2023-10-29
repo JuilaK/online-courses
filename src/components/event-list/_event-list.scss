@@ -1,0 +1,207 @@
+.event-list > * + * {
+    margin-top: 2.4rem;
+}
+
+.event-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3.2rem 4rem;
+    border: thin solid $gray-300;
+    border-radius: $border-radius;
+    background-color: $white;
+    transition: box-shadow .3s;
+
+    @media (max-width: $tablet) {
+        padding: 2rem 3.2rem;
+    }
+
+    @media (max-width: $mobile) {
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 1.2rem;
+    }
+
+    @media (max-width: $mobile-sm) {
+        padding: 2rem;
+    }
+
+    &:focus,
+	&:hover {
+        position: relative;
+        z-index: 1;
+        box-shadow: $gray-shadow-hover;
+    }  
+    
+    .btn {
+        margin-left: 2rem;
+
+        @media (max-width: $mobile) {
+            align-self: stretch;
+            margin-left: 0;
+        }
+    }
+}
+
+.event-card__info {
+    display: flex;
+    align-items: center;
+
+    @media (max-width: $mobile) {
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: .8rem;
+    }
+}
+
+.event-card__day {
+    color: $red;
+    font-size: 4.8rem;
+    font-weight: 900;
+    line-height: 1.3;
+    letter-spacing: .1rem;
+
+    @media (max-width: $tablet) {
+        font-size: 3.2rem;
+    }
+
+    span {
+        display: none;
+    }
+}
+
+.event-card__date {
+    display: flex;
+    align-items: center;
+}
+
+.event-card__date-wrapper {
+    margin-left: 2rem;
+
+    @media (max-width: $tablet) {
+        margin-left: 1.2rem;
+    }
+}
+
+.event-card__month {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.5;
+
+    @media (max-width: $tablet) {
+        font-size: 1.6rem;
+    }
+
+    span {
+        display: none;
+    }
+}
+
+.event-card__time {
+    color: $gray-700;
+    line-height: 1.6;
+    white-space: nowrap;
+
+    @media (max-width: $tablet) {
+        font-size: 1.4rem;
+    }
+}
+
+.event-card__name {
+    margin-left: 4rem;
+
+    @media (max-width: $tablet) {
+        margin-left: 2.4rem;
+    }
+
+    @media (max-width: $mobile) {
+        margin-left: 0;
+    }
+
+    h3 {
+        line-height: 1;
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.event-card__title {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+
+    @media (max-width: $tablet) {
+        font-size: 1.6rem;
+    }
+}
+
+.event-card__subtitle {
+    color: $gray-700;
+    line-height: 1.6;
+
+    @media (max-width: $tablet) {
+        font-size: 1.2rem;
+    }
+}
+
+.grid {
+    > * + * {
+        margin-top: 0;
+    }
+
+    .event-card {
+        flex-direction: column;
+        padding: 2.4rem;
+        margin-top: 0;
+        height: 100%;
+
+        .btn {
+            width: 100%;
+            margin-left: 0;
+            margin-top: 2.4rem;
+        }
+    }
+
+    .event-card__info {
+        display: block; 
+    }
+
+    .event-card__date {
+        display: block;
+    }
+
+    .event-card__day {
+        font-weight: 700;
+
+        span {
+            display: inline-block;
+            width: 4.6rem;
+            margin-left: .4rem;
+            color: inherit;
+        }
+    }
+
+    .event-card__date-wrapper {
+        margin-left: 0;
+
+        .event-card__month {
+            display: none;
+        }
+    } 
+
+    .event-card__name {
+        margin-left: 0;
+        margin-top: 2rem;
+    }
+
+    .event-card__title {
+        font-size: 1.8rem;
+    }
+
+    .event-card__subtitle {
+        margin-top: .8rem;
+    }
+}

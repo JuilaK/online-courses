@@ -1,0 +1,26 @@
+include ../buttons/buttons.pug
+
+mixin header(activeLinkNumb = false) 
+    - var links = [{title: "About us", url: "#"}, {title: "Courses", url: "./all-courses.html"}, {title: "Events", url: "./events.html"}, {title: "Blog", url: "#"}, {title: "Contacts", url: "#"}];
+
+    header.header
+        .container
+            .header__wrapper
+                .header__nav
+                    button.header__burger.js-header-burger(type="button") 
+                        span Открыть меню
+                    ul.header__burger-menu.js-header-burger-menu 
+                        each link, index in links
+                            li
+                                a.header__burger-link.js-header-burger-link(href=link.url class={active: index === activeLinkNumb})= link.title    
+                    a.header__logo(href="./" aria-label="Createx main page") 
+                        img(src="@img/logo.svg" alt="Createx logo")
+                    nav
+                        ul.header__menu
+                            each link, index in links
+                                li
+                                    a.header__menu-link(href=link.url class={active: index === activeLinkNumb})= link.title       
+                .header__btns
+                    +button('Get consultation').btn-primary.btn-lg
+                    +button('Log in / Register', 'icon-profile', 'left').btn-text.btn-lg
+                    

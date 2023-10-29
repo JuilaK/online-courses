@@ -1,0 +1,179 @@
+.footer {
+    background-color: $gray-900;
+
+    a {
+        transition: .3s;
+
+        &:focus,
+	    &:hover {
+            color: $white;
+        }
+    }
+}
+
+.footer__top {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 6rem;
+    padding-top: 8rem;
+
+    @media (max-width: $desktop) {
+        flex-wrap: wrap;
+        gap: 3.2rem 2.8rem;
+    }
+
+    @media (max-width: $tablet) {
+        justify-content: flex-start;
+    }
+}
+
+.footer__logo-wrapper {
+    @media (max-width: $tablet) {
+        flex-basis: 100%;
+    }
+}
+
+.footer__discription {
+    max-width: 28rem;
+    margin-top: 2.4rem;
+    color: rgba($color: $white, $alpha: .6);
+}
+
+.footer__list-header {
+    color: $white;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: .1rem;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.footer__list {
+    margin-top: 1.2rem;
+}
+
+.footer__list-item + .footer__list-item {
+    margin-top: .8rem;
+}
+
+
+.footer__list-link {
+    color: rgba($color: $white, $alpha: .6); 
+    font-size: 1.6rem;
+    line-height: 1.6;
+    text-decoration: none;
+}
+
+.footer__list-contact {
+    .footer__list-item {
+        position: relative;
+        padding-left: 2.4rem;
+
+        &:before {
+            @include centerY();
+
+            display: inline-block;
+            left: .1rem;
+            margin-right: .8rem;
+            color: rgba($color: $white, $alpha: .6);
+            font-size: 1.2rem;
+        }
+
+        &.icon-iphone:before {
+            left: .4rem;
+            font-size: 1.4rem;
+        }
+    }
+    
+}
+
+.footer__signup {
+    flex-basis: 28.6rem;
+    max-width: 28.6rem;
+}
+
+.footer__form {
+    position: relative;
+    margin-top: 2.4rem;
+
+    input {
+        width: 100%;
+        padding-right: 3.6rem;
+        background-color: rgba($color: $white, $alpha: .12);
+        border-color: rgba($color: $white, $alpha: 0.2);
+        color: $white;
+    }
+
+    .btn {
+        @include absolute($top: 0, $right: 0);
+
+        padding-left: 1rem;
+        padding-right: 1rem;
+        font-size: .8rem;
+    }
+}
+
+.footer__form-description {
+    margin-top: 1.2rem;
+    color: $white;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.footer__bottom {
+    background-color: rgba($color: $white, $alpha: .05);
+
+    .icon-heart {
+        padding-left: .4rem;
+        padding-right: .4rem;
+
+        &:before {
+            color: $red;
+        }
+    }
+}
+
+.footer__bottom-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 5.8rem;
+
+    @media (max-width: $mobile-sm) {
+        flex-direction: column;
+        padding-bottom: 2rem;
+        padding-top: 2rem;
+    }
+}
+
+.footer__copyright {
+    text-align: center;
+
+    span {
+        color: $white;
+        font-size: 1.2rem;
+        letter-spacing: .05rem;
+    }
+}
+
+.footer__copyright-by {
+    display: inline-flex;
+    flex-wrap: nowrap;
+
+    @media (max-width: $mobile-sm) {
+        margin-top: .8rem;
+    }
+}
+
+.footer__back {
+    color: rgba($color: $white, $alpha: .6);
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.5;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    @media (max-width: $mobile-sm) {
+        margin-top: 1.2rem;
+    }
+}

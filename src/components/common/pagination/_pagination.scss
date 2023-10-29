@@ -1,0 +1,37 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.pagination__item {
+    padding: 0 1rem;
+    color: $gray-800;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-decoration: none;
+
+    .icon-arrow-right:before {
+        font-size: 1.1rem;
+    }
+
+    .icon-arrow-right {
+        &:before {
+            font-size: 1.1rem;
+            transition: color .3s;
+        }
+
+        &:focus,
+	    &:hover,
+	    &:active {
+            &:before {
+                color: $red;
+            }
+        }
+    }
+
+    
+
+    &.active span {
+        color: $red;
+    }
+}

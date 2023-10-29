@@ -1,0 +1,15 @@
+mixin button-inner(text="", icon=false, iconPlacement=false)
+    if (icon && iconPlacement && iconPlacement == 'left')
+        span(class=icon)
+    if text 
+        span.btn-title=text
+    if (icon && iconPlacement && iconPlacement == 'right')
+        span(class=icon)
+
+mixin button(btnText="", icon=false, iconPlacement=false)
+    button.btn(type="button", class!=attributes.class)
+        +button-inner(btnText, icon, iconPlacement)
+
+mixin link-button(linkText="", href="#", icon=false, iconPlacement=false)
+    a.btn(href=href, class!=attributes.class)
+        +button-inner(linkText, icon, iconPlacement)           

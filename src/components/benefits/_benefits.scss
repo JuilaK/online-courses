@@ -1,0 +1,79 @@
+.benefits {
+    padding-bottom: 9rem;
+    padding-top: 9rem;
+
+    @media (max-width: $desktop) {
+        padding-bottom: 5rem;
+        padding-top: 5rem;
+    }
+
+    @media (max-width: $tablet) {
+        padding-bottom: 3rem;
+        padding-top: 3rem;
+    }
+}
+
+.benefits__tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6rem;
+
+    @media (max-width: $tablet) {
+        overflow-x: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }    
+
+    .btn {
+        flex-basis: 100%;        
+
+        &.active {
+            border-color: $red;
+
+            span {
+                color: $red;
+            }            
+        }
+    }
+}
+
+.benefits__tab-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6rem 0 3rem;
+
+    @media (max-width: $tablet) {
+        flex-direction: column-reverse;
+        padding: 4rem 0 2rem;
+    }
+}
+
+.benefits__tab-info {
+    flex-basis: 49rem;
+
+    @media (max-width: $tablet) {
+        flex-basis: auto;
+    }
+}
+
+.benefits__tab-info-text {
+    margin-top: 2.4rem;
+
+    @media (max-width: $tablet) {
+        margin-top: 1.4rem;
+    }
+}
+
+.benefits__img {
+    @extend %img-block;
+
+    @media (max-width: $tablet) {
+        margin-bottom: 3.2rem;
+    }
+}
+

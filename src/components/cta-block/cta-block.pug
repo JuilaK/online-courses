@@ -1,0 +1,23 @@
+include ../common/buttons/buttons.pug
+
+section.cta-block
+    - var statisticItems = [{ numb: 1200, title: "Students graduated" },{ numb: 84, title: "Completed courses" },{ numb: 16, title: "Qualified tutors" },{ numb: 5, title: "Years of experience" }];
+    .cta-block__main-info.container
+        .cta-block__info-block
+            .cta-block__play-wrapper
+                +button().btn-play
+                span Play showreel 
+            h1.cta-block__title Enjoy studying<br>with Createx Online&nbsp;Courses 
+            .cta-block__btns 
+                +link-button("About us").btn-primary-outline.btn-lg 
+                +link-button("Explore courses", "/all-courses.html").btn-primary.btn-lg 
+        .cta-block__img        
+            img(src='@img/main-illustration.svg' alt='Createx Online Courses illustration')
+    ul.cta-block__statistic.container
+        each item, index in statisticItems
+            li.cta-block__statistic-item
+                span.cta-block__statistic-numb= item.numb
+                span.cta-block__statistic-title= item.title
+            if (index < statisticItems.length - 1)
+                .cta-block__statistic-dot    
+

@@ -1,0 +1,6 @@
+include ../buttons/buttons.pug
+
+mixin input(params)
+    .input(class!=attributes.class)
+        input(type="text" placeholder=params.placeholder class={'input__with-icon': params.icon})
+        +button("", params.icon, "right").btn-text

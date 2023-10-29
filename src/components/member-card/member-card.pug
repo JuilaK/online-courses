@@ -1,0 +1,16 @@
+mixin member-card(imgUrl="", img2xUrl="", webpUrl="", name="", position="", facebookUrl="", instagramUrl="", linkedinUrl="")
+    .member-card 
+        .member-card__img
+            picture
+                source(srcset=webpUrl type="image/webp")
+                img(src=imgUrl srcset=img2xUrl alt=name)
+            ul.member-card__social 
+                li
+                    a.icon-facebook(href=facebookUrl target="_blank" aria-label="Facebook")
+                li    
+                    a.icon-instagram(href=instagramUrl target="_blank" aria-label="Instagram")
+                li    
+                    a.icon-linkedin(href=linkedinUrl target="_blank" aria-label="LinkedIn") 
+        .member-card__info 
+            .member-card__name= name
+            .member-card__position= position

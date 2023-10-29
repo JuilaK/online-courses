@@ -1,0 +1,11 @@
+include ../common/block-title/block-title.pug
+include ../common/buttons/buttons.pug
+
+section.subscribe 
+    .container
+        .subscribe__header
+            +block-title("Subscribe to the Createx School announcements", "Don’t miss anything", "center")
+        form.subscribe__form(action="#" method="post")
+            input.input-lg(type="text" placeholder="Your working email")
+            +button("Subscribe").btn-primary.btn-lg
+

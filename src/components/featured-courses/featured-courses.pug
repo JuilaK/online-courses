@@ -1,0 +1,72 @@
+include ../common/block-title/block-title.pug
+include ../common/buttons/buttons.pug
+include ../course-list/course-list.pug
+
+section.featured-courses.container
+    .featured-courses__header
+        +block-title("Featured Courses", "Ready to learn?")
+        +link-button("View all courses", "/all-courses.html").btn-primary-outline.btn-lg
+    +course-list('',
+                [
+                    { 
+                        imgUrl:"@img/avatar-1.png",
+                        img2xUrl:"@img/avatar-1@2x.png",
+                        webpUrl:"@img/avatar-1.webp, @img/avatar-1@2x.webp 2x", 
+                        category:"Marketing", 
+                        badgeColor:"green",
+                        title:"The Ultimate Google Ads Training Course", 
+                        price:100, 
+                        author:"Jerome Bell"
+                    }, 
+                    { 
+                        imgUrl:"@img/avatar-2.png", 
+                        img2xUrl:"@img/avatar-2@2x.png",
+                        webpUrl:"@img/avatar-2.webp, @img/avatar-2@2x.webp 2x", 
+                        category:"Managment", 
+                        badgeColor:"blue",
+                        title:"Product Management Fundamentals", 
+                        price:480, 
+                        author:"Marvin McKinney"
+                    }, 
+                    {
+                        imgUrl:"@img/avatar-3.png",
+                        img2xUrl:"@img/avatar-3@2x.png",
+                        webpUrl:"@img/avatar-3.webp, @img/avatar-3@2x.webp 2x",  
+                        category:"HR & Recruting",
+                        badgeColor:"yellow", 
+                        title:"HR  Management and Analytics", 
+                        price: 200, 
+                        author:"Leslie Alexander Li"
+                    }, 
+                    {
+                        imgUrl:"@img/avatar-4.png",
+                        img2xUrl:"@img/avatar-4@2x.png",
+                        webpUrl:"@img/avatar-4.webp, @img/avatar-4@2x.webp 2x",  
+                        category:"Marketing",
+                        badgeColor:"green", 
+                        title:"Brand Management & PR Communications", 
+                        price: 530, 
+                        author:"Kristin Watson"
+                    }, 
+                    { 
+                        imgUrl:"@img/avatar-1.png",
+                        img2xUrl:"@img/avatar-1@2x.png",
+                        webpUrl:"@img/avatar-1.webp, @img/avatar-1@2x.webp 2x",  
+                        category:"Managment", 
+                        badgeColor:"blue",
+                        title:"Business Development Management", 
+                        price: 400, 
+                        author:"Dianne Russel"
+                    }, 
+                    { 
+                        imgUrl:"@img/avatar-2.png",
+                        img2xUrl:"@img/avatar-2@2x.png",
+                        webpUrl:"@img/avatar-2.webp, @img/avatar-2@2x.webp 2x",  
+                        category:"Design", 
+                        badgeColor:"pink",
+                        title:"Graphic Design Basic", 
+                        price: 500, 
+                        author:"Guy Hawkins"
+                    }
+                ]
+            ).featured-courses__list

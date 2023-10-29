@@ -1,0 +1,49 @@
+include ../buttons/buttons.pug
+
+- var siteMapLinks=[{title: 'About Us', link: '#'}, {title: 'Courses', link: './all-courses.html'}, {title: 'Events', link: './events.html'}, {title: 'Blog', link: '#'}, {title: 'Contacts', link: '#'}];
+- var categoryLinks=['Marketing', 'Management', 'HR & Recruting', 'Design', 'Development'];
+
+footer.footer
+    .footer__top.container
+        .footer__logo-wrapper
+            a.footer__logo(href="./" aria-label="Createx main page") 
+                img(src="@img/logo-light.svg", alt="Createx logo")
+            p.footer__discription
+                |Createx Online School is a leader in online studying. We have lots of courses and programs from the main market experts. 
+                |We provide relevant approaches to online learning, internships and employment in the largest companies in the country.  
+        div 
+            h3.footer__list-header Site map
+            ul.footer__list
+                each link in siteMapLinks
+                    li.footer__list-item 
+                        a.footer__list-link(href=link.link)= link.title 
+        div 
+            h3.footer__list-header Courses
+            ul.footer__list
+                each link in categoryLinks
+                    li.footer__list-item  
+                        a.footer__list-link(href="#")= link 
+        .footer__list-contact 
+            h3.footer__list-header Contact us
+            address
+                ul.footer__list
+                    li.footer__list-item.icon-iphone
+                        a.footer__list-link(href="#") (405) 555-0128    
+                    li.footer__list-item.icon-mail
+                        a.footer__list-link(href="#") hello@createx.com
+        .footer__signup
+            h3.footer__list-header Sign up to our newsletter
+            form.footer__form(action="#" method="post")
+                input.input-sm(type="text" placeholder="Email address")
+                +button("","icon-arrow-right", "right").btn-text.btn-sm
+            p.footer__form-description *Subscribe to our newsletter to receive communications and early updates from Createx SEO Agency.                                                   
+    .footer__bottom
+        .container
+            .footer__bottom-wrapper  
+                .footer__copyright
+                    span © All rights reserved. 
+                    .footer__copyright-by
+                        span Made with
+                        .icon-heart
+                        span by Createx Studio 
+                a.footer__back(href="#") Go to top  

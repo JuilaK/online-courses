@@ -1,0 +1,22 @@
+include ../common/buttons/buttons.pug
+
+mixin event-card(day="", month="", timePeriod="", title="", subtitle="", href="#")
+    li
+        article.event-card
+            .event-card__info
+                .event-card__date
+                    .event-card__day= day
+                        span= month
+                    .event-card__date-wrapper
+                        .event-card__month= month
+                        .event-card__time= timePeriod
+                .event-card__name 
+                    h3  
+                        a.event-card__title(href=href)= title
+                    .event-card__subtitle= subtitle
+            +link-button('View more', '#').btn-primary-outline        
+
+mixin event-list(events=[])
+    ul.event-list(class!=attributes.class) 
+        each event in events
+            +event-card(event.day, event.month, event.timePeriod, event.title, event.subtitle, event.href)           

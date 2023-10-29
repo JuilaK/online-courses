@@ -1,0 +1,80 @@
+include ../common/block-title/block-title.pug
+include ../common/buttons/buttons.pug
+include ../common/dropdown/dropdown.pug
+include ../common/form/input.pug
+include ../common/pagination/pagination.pug
+include ../event-list/event-list.pug
+
+section.our-events.container
+    +block-title("Lectures, workshops & master-classes", "Our events", "center", true)
+    .our-events__controls
+        .our-events__filters 
+            +dropdown([{title: "all themes"}, {title: "theme 1"}, {title: "theme 2"}, {title: "theme 3"}], "Event category").our-events__filter-category
+            +dropdown([{title: "newest"}, {title: "oldest"}], "Sort by").our-events__filter-sort
+            +dropdown([{title: "8"}, {title: "9"}, {title: "10"}, {title: "11"}], "Show", "events per page").our-events__filter-count
+            +input({
+                    placeholder: "Search events...",
+                    icon: "icon-search"
+                }).our-events__filter-input
+        +button("Filters", "icon-filter-1", "right").btn-secondary-outline.our-events__filters-menu       
+        .our-events__switch.js-our-events-switch
+            +button("", "icon-list", "right").btn-text.active
+            +button("", "icon-grid", "right").btn-text           
+    +event-list([
+            {
+                day: '05',
+                month: 'August',
+                timePeriod: '11:00 - 14:00',
+                title: 'Formation of the organizational structure of the company in the face of uncertainty.',
+                subtitle: 'Onine master-class'
+            },{
+                day: '24',
+                month: 'July',
+                timePeriod: '11:00 - 12:30',
+                title: 'Building a customer service department. Best Practices.',
+                subtitle: 'Onine lecture'
+            },{
+                day: '16',
+                month: 'July',
+                timePeriod: '10:00 - 13:00',
+                title: 'How to apply methods of speculative design in practice. Worldbuilding prototyping.',
+                subtitle: 'Onine workshop'
+            },{
+                day: '10',
+                month: 'July',
+                timePeriod: '9:00 – 14:00',
+                title: 'Find and evaluate: search and assessment tools for candidates.',
+                subtitle: 'Onine workshop'
+            },{
+                day: '27',
+                month: 'June',
+                timePeriod: '15:00 – 19:00',
+                title: 'Connection to Microsoft Excel and Google Sheets, Data Visualization in Power BI.',
+                subtitle: 'Onine master-class'
+            },{
+                day: '15',
+                month: 'June',
+                timePeriod: '10:00 – 12:00',
+                title: 'Marketing or growth hacking: main differences and what business needs.',
+                subtitle: 'Onine lecture'
+            },{
+                day: '02',
+                month: 'June',
+                timePeriod: '11:00 – 13:00',
+                title: 'How to brief a client and present your design to approve it from the first show.',
+                subtitle: 'Onine lecture'
+            },{
+                day: '29',
+                month: 'May',
+                timePeriod: '11:00 – 12:00',
+                title: 'Who is a project manager and do I want to be PM?',
+                subtitle: 'Onine lecture'
+            },{
+                day: '18',
+                month: 'May',
+                timePeriod: '10:00 – 12:00',
+                title: "The company's business page as an additional tool to support the announcement of vacancies.",
+                subtitle: 'Onine lecture'
+            }
+        ]).our-events__list.js-our-events-list
+    +pagination(4).our-events__pagination

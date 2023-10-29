@@ -1,0 +1,13 @@
+include ../common/block-title/block-title.pug
+include ../common/swiper/swiper.pug
+include ../review-card/review-card.pug
+
+- var slides = [{text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Justo, amet lectus quam viverra mus lobortis fermentum amet, eu. Pulvinar eu sed purus facilisi. Vitae id turpis tempus ornare turpis quis non. Congue tortor in euismod vulputate etiam eros. Pulvinar neque pharetra arcu diam maecenas diam integer in.", imageUrl:"@img/avatar-4.png", image2xUrl:"@img/avatar-4@2x.png", webpUrl:"@img/avatar-4.webp, @img/avatar-4@2x.webp 2x", author:"Eleanor Pena", position:"Position", courseName:"Course"},{text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Justo, amet lectus quam viverra mus lobortis fermentum amet, eu. Pulvinar eu sed purus facilisi. Vitae id turpis tempus ornare turpis quis non. Congue tortor in euismod vulputate etiam eros. Pulvinar neque pharetra arcu diam maecenas diam integer in.", imageUrl:"@img/avatar-4.png", image2xUrl:"@img/avatar-4@2x.png", webpUrl:"@img/avatar-4.webp, @img/avatar-4@2x.webp 2x", author:"Eleanor Pena", position:"Position", courseName:"Course"}];
+
+section.reviews 
+    .container 
+        +block-title("What our students say", "Testimonials", "center")
+        +swiper(false, true).reviews__slider
+            each slide in slides 
+                .swiper-slide 
+                    +review-card(slide.text, slide.imageUrl, slide.image2xUrl, slide.webpUrl, slide.author, slide.position, slide.courseName)

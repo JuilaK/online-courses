@@ -1,0 +1,16 @@
+include ../common/block-title/block-title.pug
+include ../common/buttons/buttons.pug
+
+- var list = ["A fermentum in morbi pretium aliquam adipiscing donec tempus.","Vulputate placerat amet pulvinar lorem nisl.","Consequat feugiat habitant gravida quisque elit bibendum id adipiscing sed.","Etiam duis lobortis in fames ultrices commodo nibh.","Tincidunt sagittis neque sem ac eget.","Ultricies amet justo et eget quisque purus vulputate dapibus tortor."]
+
+section.why-block.container    
+    .why-block__img
+        picture
+            source(srcset="@img/why-img.webp, @img/why-img@2x.webp 2x" type="image/webp")
+            img(src="@img/why-img.jpg" srcset="@img/why-img@2x.img 2x" alt="" aria-hidden="true")
+    .why-block__info
+        +block-title("Why Createx?", "Who we are")
+        ul.why-block__list
+            each item in list
+                li.why-block__list-item=item
+        +link-button("More about us").btn-primary

@@ -1,0 +1,32 @@
+include ../common/block-title/block-title.pug
+include ../common/buttons/buttons.pug
+include ../event-list/event-list.pug
+
+section.events 
+    .container 
+        +block-title("Lectures & workshops", "Our Events", "center")
+        +event-list([
+            {
+                day: '05',
+                month: 'August',
+                timePeriod: '11:00 - 14:00',
+                title: 'Formation of the organizational structure of the company in the face of uncertainty.',
+                subtitle: 'Onine master-class'
+            },{
+                day: '24',
+                month: 'July',
+                timePeriod: '11:00 - 12:30',
+                title: 'Building a customer service department. Best Practices.',
+                subtitle: 'Onine lecture'
+            },{
+                day: '16',
+                month: 'July',
+                timePeriod: '10:00 - 13:00',
+                title: 'How to apply methods of speculative design in practice. Worldbuilding prototyping.',
+                subtitle: 'Onine workshop'
+            }
+        ]).events__list
+
+        .events__explore-block 
+            p.events__explore-text Do you want more?
+            +link-button('Explore all events', '#').btn-primary.btn-lg

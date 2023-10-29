@@ -1,0 +1,13 @@
+include ../dropdown/dropdown.pug
+
+mixin tabsList(tabsList=[])
+    .tabs
+        nav.tabs__nav
+            each tab, index in tabsList
+                button(type="button" data-tab="#tab_" + index).btn.btn-text.tabs__nav-btn.js-tabs-nav-btn
+                    if tab.icon 
+                        span(class=tab.icon) 
+                    span.tabs__nav-btn-title= tab.title
+                    if tab.count
+                        span.tabs__nav-btn-count= tab.count 
+        +dropdown(tabsList).tabs__dropdown

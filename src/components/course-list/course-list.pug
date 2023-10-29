@@ -1,0 +1,20 @@
+mixin course-card(imgUrl="", img2xUrl="", webpUrl="", category="", badgeColor="gray", title="", price="", author="")
+    li
+        article.course-card
+            .course-card__avatar 
+                picture
+                    source(srcset=webpUrl type="image/webp")
+                    img(src=imgUrl srcset=img2xUrl alt=title)
+            .course-card__info 
+                if category
+                    .course-card__badge(class='course-card__badge_' + badgeColor)= category 
+                h3
+                    a.course-card__title(href="#")= title
+                .course-card__price-wrapper 
+                    .course-card__price $#{price}
+                    .course-card__author by #{author}
+
+mixin course-list(orientation="", courses=[])
+    ul.course-list(class!=attributes.class class={'grid': orientation == 'vertical'}) 
+        each course in courses
+            +course-card(course.imgUrl, course.img2xUrl, course.webpUrl, course.category, course.badgeColor, course.title, course.price, course.author)           

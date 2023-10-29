@@ -1,0 +1,21 @@
+include ../common/block-title/block-title.pug
+
+section.certificate.container 
+    .certificate__info
+        +block-title("Your expertise will be confirmed", "Createx Certificate")
+        p.certificate__description We are accredited by international professional organizations and institutes:
+        .certificate__logos
+            picture
+                source(srcset="@img/del-mar-strategy-logo.webp, @img/del-mar-strategy-logo@2x.webp 2x" type="image/webp") 
+                img(src="@img/del-mar-strategy-logo.png" srcset="@img/del-mar-strategy-logo@2x.png 2x" alt="Del Mar strategy logo")
+            picture
+                source(srcset="@img/sentinal-consulting-logo.webp, @img/sentinal-consulting-logo@2x.webp 2x" type="image/webp") 
+                img(src="@img/sentinal-consulting-logo.png" srcset="@img/sentinal-consulting-logo@2x.png 2x" alt="Sentinal consulting logo")    
+            picture
+                source(srcset="@img/national-logo.webp, @img/national-logo@2x.webp 2x" type="image/webp") 
+                img(src="@img/national-logo.png" srcset="@img/national-logo@2x.png 2x" alt="National logo")
+    .certificate__img
+        picture
+            source(srcset="@img/certificate.webp, @img/certificate@2x.webp 2x" type="image/webp")
+            img(src="@img/certificate.jpg" srcset="@img/certificate@2x.jpg 2x" alt="Certificate image")       
+

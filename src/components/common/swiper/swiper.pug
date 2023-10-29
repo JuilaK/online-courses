@@ -1,0 +1,8 @@
+mixin swiper(isTopControls=false, isPagination=false)
+    .swiper(class={'swiper_top-controls': isTopControls} class!=attributes.class)
+        .swiper-wrapper
+            block
+        .swiper-button-prev
+        .swiper-button-next
+        if isPagination
+            .swiper-pagination  

@@ -1,0 +1,8 @@
+include ../buttons/buttons.pug
+
+mixin pagination(pageCount=2)
+    - let i = 1;
+    nav.pagination(class!=attributes.class) 
+        while i < pageCount+1 
+            +link-button(i++, '#').btn-text.pagination__item.js-pagination-item
+        +link-button('', '#', 'icon-arrow-right', 'right').btn-text.pagination__item.js-pagination-item   

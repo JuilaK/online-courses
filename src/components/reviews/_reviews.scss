@@ -1,0 +1,93 @@
+.reviews {
+    padding-bottom: 6rem;
+    padding-top: 10rem;
+    background-color: $gray-200;
+
+    @media (max-width: $desktop) {
+        padding-bottom: 3rem;
+        padding-top: 5rem;
+    }
+
+    @media (max-width: $tablet) {
+        padding-bottom: 1rem;
+        padding-top: 3rem;
+    }    
+}
+
+.reviews__slider {
+    margin-top: 6rem;
+    padding-bottom: 10rem;
+
+    @media (max-width: $desktop) {
+        margin-top: 4rem;
+    }
+
+    @media (max-width: $tablet) {
+        margin: 3rem -3rem 0 -3rem;
+    }
+
+    @media (max-width: $mobile) {
+        margin-left: -1.6rem;
+        margin-right: -1.6rem;
+    }
+
+    .swiper-slide {
+        padding: 0 10.5rem;
+
+        @media (max-width: $desktop) {
+            padding: 0 6.4rem;
+        }
+    
+        @media (max-width: $tablet) {
+            padding: 0 3rem;
+        }
+
+        @media (max-width: $mobile) {
+            padding: 0 1.6rem;
+        }
+    }
+
+    [class^="swiper-button"] {
+        top: calc(50% - 3.6rem);
+
+        @media (max-width: $desktop) {
+            top: calc(50% - 4rem);
+        }
+    
+        @media (max-width: $tablet) {
+            top: calc(50% - 4.8rem);
+        }
+    }
+
+    .swiper-button-prev {
+        @media (max-width: $tablet) {
+            left: 4rem;
+        }
+
+        @media (max-width: $mobile) {
+            left: 2.4rem;
+        } 
+    }
+
+    .swiper-button-next {
+        @media (max-width: $tablet) {
+            right: 4.2rem;
+        }
+        
+        @media (max-width: $mobile) {
+            right: 2.6rem;
+        } 
+    }
+
+    .swiper-pagination {
+        bottom: 3.6rem;
+
+        @media (max-width: $desktop) {
+            bottom: 4rem;
+        }
+    
+        @media (max-width: $tablet) {
+            bottom: 4.8rem;
+        }
+    }
+}

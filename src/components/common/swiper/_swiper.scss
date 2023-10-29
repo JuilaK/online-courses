@@ -1,0 +1,86 @@
+.swiper_top-controls {
+    margin-top: -6rem;
+    padding-top: 11.6rem;
+
+    @media (max-width: $tablet) {
+        margin-top: -4rem;
+        padding-top: 6.6rem; 
+    }
+
+    [class^="swiper-button"] {        
+        right: 0;
+        top: 4.8rem; 
+        
+        @media (max-width: $tablet) {
+            top: 2.8rem;
+        }
+    }
+
+    .swiper-button-prev {
+        left: auto;
+        right: 4.8rem;
+    }
+}
+
+
+[class^="swiper-button"] {
+    &:before {
+        @include center();
+        @include size(.1rem);
+
+        content: "";
+        background-color: $red;
+        border-radius: 50%;
+        z-index: -1;
+        transition: transform .3s;
+    }
+
+    &:after {
+        color: $gray-900;
+        font-size: 1.2rem;
+        transition: color .3s;
+    }
+
+    &:focus,
+	&:hover,
+	&:active {
+        &:after {
+            color: $red;
+        }
+    
+    }
+}
+
+
+.swiper-button-next {
+    right: 1.2rem;
+    
+    &:after {
+        @extend %ic;
+
+        content: "\e90a";
+    }
+}
+
+.swiper-button-prev:after {
+    @extend %ic;
+
+    content: "\e908";
+}
+
+.swiper-pagination-bullet {
+    @include size(3rem, .3rem);
+
+    padding: 0;
+    background-color: $gray-500;
+    border-radius: 0;
+
+    &-active {
+        background-color: $gray-800;
+    }
+}
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin-left: .6rem;
+    margin-right: .6rem;
+}

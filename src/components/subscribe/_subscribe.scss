@@ -1,0 +1,54 @@
+.subscribe {
+    padding-bottom: 18rem;
+    padding-top: 12rem;
+    background: bottom left no-repeat url("../images/subscribe-img.svg"), bottom right no-repeat url("../images/subscribe-img.svg"), $light-red-gradient;
+
+    @media (max-width: $desktop) {
+        padding-bottom: 10rem;
+        padding-top: 6rem;
+        background-size: 20%, 20%;
+    }
+
+    @media (max-width: $tablet) {
+        padding-bottom: 6rem;
+        padding-top: 4rem;
+        background: $light-red-gradient;
+    }
+}
+
+.subscribe__header {
+    margin: 0 auto;
+    max-width: 81rem;
+}
+
+.subscribe__form {
+    display: flex;
+    justify-content: center;
+    gap: 2.4rem;
+    margin-top: 6rem;
+    font-size: 0;
+    text-align: center;
+    white-space: nowrap;
+
+    @media (max-width: $desktop) {
+        margin-top: 4rem;
+    }
+
+    @media (max-width: $tablet) {
+        margin-top: 3.2rem;
+    }
+
+    @media (max-width: $mobile-sm) {
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+
+    input {
+        flex-basis: 42.2rem;
+        max-width: 42.2rem;
+
+        @media (max-width: $mobile-sm) {
+            flex-basis: auto;
+        }
+    }
+}

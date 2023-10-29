@@ -1,0 +1,16 @@
+extends ../layout/page.pug
+include ../components/common/header/header.pug
+
+block vars
+    - var pageTitle = 'Our online courses'
+    - var pageDescription = 'Enjoy studying with Createx Online Courses'
+    - var pageKeywords = 'CreateX School, online courses'
+block content
+    +header(1)
+    main
+        include ../components/our-courses/our-courses.pug
+        include ../components/reviews/reviews.pug
+        include ../components/certificate/certificate.pug        
+        include ../components/subscribe/subscribe.pug
+    include ../components/common/footer/footer.pug    
+

@@ -1,0 +1,54 @@
+$pink:                          #F52F6E;
+$red:                           #FF3F3A;
+$red-dark:                      #FF4242;
+$orange:                        #F89828;
+$yellow:                        #FFCF2D;
+$green:                         #03CEA4;
+$blue:                          #5A87FC;
+
+$white:                         #FFFFFF;
+$gray-100:                      #F9F9F9;
+$gray-200:                      #F4F5F7;
+$gray-300:                      #E5E8ED;
+$gray-400:                      #D7DADD;
+$gray-500:                      #B3B7BC;
+$gray-600:                      #9A9CA5;
+$gray-700:                      #787A80;
+$gray-800:                      #424551;
+$gray-900:                      #1E212C;
+
+$red-gradient:                  linear-gradient(55.95deg, $red 0%, #F75E05 100%);
+$light-red-gradient:            linear-gradient(55.95deg, rgba($red, 0.2) 0%, rgba(#F75E05, 0.2) 100%);
+$grey-gradient:                 linear-gradient(270.01deg, rgba(218, 219, 221, 0) 0%, rgba(218, 219, 221, 0.5) 12.33%, #DADBDD 51.91%, rgba(218, 219, 221, 0.5) 87.85%, rgba(218, 219, 221, 0) 100%);
+
+$gray-shadow:                   0 8rem 8rem -2rem rgba(154, 156, 165, 0.08), 
+                                0 3rem 2.4rem -1rem rgba(154, 156, 165, 0.05), 
+                                0 1.2rem 1rem -.6rem rgba(154, 156, 165, 0.04), 
+                                0 .4rem .4rem -.4rem rgba(30, 33, 44, 0.03);
+$gray-shadow-hover:             0 8rem 8rem -2rem rgba(154, 156, 165, 0.16), 
+                                0 3rem 2.4rem -1rem rgba(154, 156, 165, 0.1), 
+                                0 1.2rem 1rem -.6rem rgba(154, 156, 165, 0.08), 
+                                0 .4rem .4rem -.4rem rgba(30, 33, 44, 0.05);                                
+
+$font-family:                   "Lato", "Helvetica Neue", Arial, sans-serif;
+
+$font-size-xs:                  1.4rem;
+$font-size-sm:                  1.6rem;
+$font-size:                     1.6rem;
+$font-size-lg:                  3.4rem;
+$font-size-xl:                  4.8rem;
+
+$container-padding:             3rem;
+$container-padding-mobile:      1.6rem;
+$max-width-container:           129rem;
+
+$mobile-sm:                     479.98px;
+$mobile:                        767.98px;
+$tablet:                        991.98px;
+$desktop:                       1199.98px;
+
+$header-height:                 9.4rem;
+$header-height-tablet:          6.4rem;
+$header-height-mobile:          5.4rem;
+
+$border-radius:                 .4rem; 

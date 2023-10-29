@@ -1,0 +1,39 @@
+.block-title_center {
+    text-align: center;
+}
+
+.block-title__title {
+    display: block;
+    font-size: 4.6rem;
+    font-weight: 900;
+    line-height: 1.3;
+
+    @media (max-width: $tablet) {
+        font-size: 4rem;
+    }
+
+    @media (max-width: $mobile) {
+        font-size: 3.2rem;
+    }
+}
+
+.block-title__subtitle {
+    display: block;
+    margin-bottom: .8rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.5;
+    text-transform: uppercase;
+    
+    @media (max-width: $tablet) {
+        font-size: 1.4rem;
+    }
+
+    @media (max-width: $mobile) {
+        font-size: 1.2rem;
+    }
+
+    @media (max-width: $mobile-sm) {
+        margin-bottom: .4rem;
+    }
+}

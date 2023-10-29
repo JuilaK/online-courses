@@ -1,0 +1,22 @@
+extends ../layout/page.pug
+include ../components/common/header/header.pug
+
+block vars
+    - var pageTitle = 'CreateX School'
+    - var pageDescription = 'Enjoy studying with Createx Online Courses'
+    - var pageKeywords = 'CreateX School, online courses'
+block content
+    +header()
+    main
+        include ../components/cta-block/cta-block.pug
+        include ../components/why-block/why-block.pug
+        include ../components/featured-courses/featured-courses.pug
+        include ../components/benefits/benefits.pug
+        include ../components/events/events.pug
+        include ../components/certificate/certificate.pug
+        include ../components/our-team/our-team.pug
+        include ../components/reviews/reviews.pug
+        include ../components/latest-posts/latest-posts.pug
+        include ../components/subscribe/subscribe.pug
+    include ../components/common/footer/footer.pug    
+

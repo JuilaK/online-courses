@@ -1,0 +1,21 @@
+mixin dropdown(optionsList=[], label="", subLabel="")        
+    .dropdown.js-dropdown(class!=attributes.class)
+        if label
+            span.dropdown__label= label
+        button.btn.dropdown__toggle.js-dropdown-toggle(type="button")
+            span.dropdown__toggle-wrapper.js-dropdown-toggle-wrapper
+                span.dropdown__option-title= optionsList[0].title
+                if optionsList[0].count
+                    span.dropdown__option-count= optionsList[0].count 
+            span.icon-chevron-down
+        ul.dropdown__menu.js-dropdown-menu
+            each option, index in optionsList
+                li
+                    button(type="button" data-tab="#tab_" + index).btn.btn-text.dropdown__option.js-dropdown-option
+                        if option.icon 
+                            span(class=option.icon) 
+                        span.dropdown__option-title= option.title
+                        if option.count
+                            span.dropdown__option-count= option.count  
+        if subLabel 
+            span.dropdown__sublabel= subLabel                        

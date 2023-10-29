@@ -1,0 +1,9 @@
+mixin block-title(title="", subtitle="", alignment="", isMainTitle=false)
+    if (isMainTitle)
+        h1.block-title(class= {'block-title_center': alignment == "center"})
+            span.block-title__subtitle=subtitle
+            span.block-title__title=title
+    else 
+        h2.block-title(class= {'block-title_center': alignment == "center"})
+            span.block-title__subtitle=subtitle
+            span.block-title__title=title        

@@ -1,0 +1,13 @@
+include ../common/block-title/block-title.pug
+include ../common/swiper/swiper.pug
+include ../member-card/member-card.pug
+
+- var slides = [{imgUrl:"@img/avatar-4.png", img2xUrl:"@img/avatar-4@2x.png", webpUrl:"@img/avatar-4.webp, @img/avatar-4@2x.webp 2x", name:"Dianne Russell", position:"Founder and CEO", facebookUrl:"https://www.facebook.com", instagramUrl:"https://www.instagram.com", linkedinUrl:"https://www.linkedin.com"}, {imgUrl:"@img/avatar-1.png", img2xUrl:"@img/avatar-1@2x.png", webpUrl:"@img/avatar-1.webp, @img/avatar-1@2x.webp 2x", name:"Jerome Bell", position:"Founder and Program Director", facebookUrl:"www.facebook.com", instagramUrl:"www.instagram.com", linkedinUrl:"www.linkedin.com"}, {imgUrl:"@img/avatar-3.png", img2xUrl:"@img/avatar-3@2x.png", webpUrl:"@img/avatar-3.webp, @img/avatar-3@2x.webp 2x", name:"Kristin Watson", position:"Marketer, Curator of Marketing Course", facebookUrl:"www.facebook.com", instagramUrl:"www.instagram.com", linkedinUrl:"www.linkedin.com"}, {imgUrl:"@img/avatar-2.png", img2xUrl:"@img/avatar-2@2x.png", webpUrl:"@img/avatar-2.webp, @img/avatar-2@2x.webp 2x", name:"Marvin McKinney", position:"PM, Curator of Management Course", facebookUrl:"www.facebook.com", instagramUrl:"www.instagram.com", linkedinUrl:"www.linkedin.com"}];
+
+section.our-team 
+    .container 
+        +block-title("Meet our team", "Best tutors are all here")
+        +swiper(true).team-slider
+            each slide in slides 
+                .swiper-slide 
+                    +member-card(slide.imgUrl, slide.img2xUrl, slide.webpUrl, slide.name, slide.position, slide.facebookUrl, slide.instagramUrl, slide.linkedinUrl)

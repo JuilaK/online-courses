@@ -1,0 +1,14 @@
+mixin review-card(text="", imageUrl="", image2xUrl="", webpUrl="", author="", position="", courseName="")
+    .review-card
+        .icon-braces
+        .review-card__content
+            .review-card__text= text 
+            .review-card__info
+                .review-card__img
+                    picture
+                        source(srcset=webpUrl type="image/webp")
+                        img(src=imgUrl srcset=img2xUrl alt=author)
+                .review-card__meta
+                    .review-card__author= author 
+                    .review-card__position #{position}, #{courseName}
+            

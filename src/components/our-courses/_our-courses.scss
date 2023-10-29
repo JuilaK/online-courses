@@ -1,0 +1,75 @@
+.our-courses {
+    padding-bottom: 12rem;
+    padding-top: 15.2rem;
+
+    @media (max-width: $desktop) {
+        padding-bottom: 6rem;
+        padding-top: 14vh;
+    }
+
+    @media (max-width: $tablet) {
+        padding-bottom: 4rem;
+        padding-top: 9.6rem;
+    }
+}
+
+.our-courses__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 6rem;
+
+    @media (max-width: $tablet) {
+        margin-top: 4rem; 
+    }
+
+    .tabs {
+        flex-basis: 25rem;
+
+        @media (max-width: $mobile-sm) {
+            flex-basis: auto;
+        }
+    }
+
+    @media (max-width: $mobile-sm) {
+        align-items: stretch;
+        flex-direction: column;
+    }
+}
+
+.our-courses__form {
+    flex-basis: 31.8rem;
+    
+    @media (max-width: $mobile-sm) {
+        flex-basis: auto;
+    }
+}
+
+.our-courses__list {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    margin-top: 6rem;
+
+    @media (max-width: $tablet) {
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 3rem;
+    }
+
+    @media (max-width: $mobile) {
+        grid-template-columns: 1fr;       
+    }
+}
+
+.our-courses__btn-load {
+    margin-top: 6.5rem;
+    text-align: center;
+
+    @media (max-width: $desktop) {
+        margin-top: 4rem;
+    }
+
+    @media (max-width: $tablet) {
+        margin-top: 3.2rem;
+    }
+}

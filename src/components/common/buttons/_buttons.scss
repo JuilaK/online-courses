@@ -1,0 +1,278 @@
+$btn-circle-size: 5.2rem;
+$btn-circle-size-mobile: 4rem;
+
+@mixin button-style($color: false, $color-hover: false, $background-color: false, $background-color-hover: false, $background-image: false, $background-image-hover: false, $border-color: false, $border-color-hover: false) {
+	@if $background-image {
+		background-image: $background-image;
+    }
+
+	@if $background-color {
+		background-color: $background-color;
+    }
+
+	@if $border-color {
+		border-color: $border-color;
+    }
+
+    span {
+        @if $color {
+            color: $color;
+        }
+    }
+
+	&:focus,
+	&:hover,
+	&:active,
+    &.active {
+		@if $background-image-hover {
+			background-image: $background-image-hover;
+        }
+
+		@if $background-color-hover {
+			background-color: $background-color-hover;
+        }
+
+		@if $border-color-hover {
+			border-color: $border-color-hover;
+        }
+        
+        span {
+            @if $color-hover {
+                color: $color-hover;
+            }
+        }
+    }            
+}                
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 4.4rem;
+    padding: 0 3.1rem;
+    border: thin solid transparent;  
+    border-radius: $border-radius; 
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: .05rem;
+    line-height: normal;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color, background-color, border-color .3s;
+
+    @media (max-width: $mobile){
+        height: 3.6rem;
+        padding: 0 2.3rem;
+        font-size: 1.2rem;
+    }
+
+    &:disabled {
+        opacity: .5;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+        outline: none;
+    }
+
+    span {
+        z-index: 1;
+
+        + span {
+            margin-left: .8rem;
+        }
+    }
+}
+
+//Button types
+
+.btn-primary {
+    @include button-style(
+        $color: $white,
+        $background-image: $red-gradient
+    ); 
+
+    &::after {
+        @include absolute($top: 0, $left: 0);
+        @include size(100%);
+
+        content: '';
+        background-image: linear-gradient(55.95deg, $red 0%, $red 100%);
+        opacity: 0; 
+        transition: opacity .3s;
+        z-index: 0;
+    }
+
+    &:hover {
+        &::after {
+            opacity: 1;  
+        }
+    }
+}
+
+.btn-primary-outline { 
+    @include button-style(
+        $color: $red,
+        $color-hover: $white,
+        $background-color: transparent,
+        $border-color: $red,
+        $border-color-hover: transparent
+    );
+
+    &::after {
+        @include absolute($top: 0, $left: 0);
+        @include size(100%);
+
+        content: '';
+        background-image: $red-gradient;
+        border-radius: $border-radius;
+        opacity: 0; 
+        transition: opacity .3s;
+        z-index: 0;
+    }
+
+    &:hover {
+        &::after {
+            opacity: 1;  
+        }
+    }
+}
+
+.btn-secondary {
+    @include button-style(
+        $color: $gray-800,
+        $background-color: $gray-300,
+        $background-color-hover: transparent,
+        $border-color: $gray-300,
+        $border-color-hover: $gray-400
+    ) 
+}
+
+.btn-secondary-outline {
+    @include button-style(
+        $color: $gray-800,
+        $background-color: $white,
+        $background-color-hover: $gray-400,
+        $border-color: $gray-400
+    )
+}
+
+.btn-dark {
+    @include button-style(
+        $color: $white,
+        $background-color: $gray-800,
+        $background-color-hover: $gray-900,
+        $border-color-hover: transparent
+    ) 
+}
+
+.btn-dark-outline {
+    @include button-style(
+        $color: $gray-800,
+        $background-color: $white,
+        $background-color-hover: $gray-900,
+        $border-color: $gray-800,
+        $border-color-hover: transparent
+    ) 
+}
+
+.btn-white {
+    @include button-style(
+        $color: $gray-800,
+        $color-hover: $gray-900,
+        $background-color: $white,
+        $border-color-hover: transparent
+    )
+}
+
+.btn-white-outline {
+    @include button-style(
+        $color: $white,
+        $color-hover: $gray-900,
+        $background-color: $gray-800,
+        $background-color-hover: $white,
+        $border-color: $white,
+        $border-color-hover: transparent
+    )
+}
+
+.btn-text {
+    @include button-style(
+        $color: $gray-800,
+        $color-hover: $gray-900,
+        $background-color: transparent
+    )
+}
+
+.btn-play {
+    @include size($btn-circle-size);
+
+    position: relative;
+    border-radius: 50%;
+    background-color: $red;
+    padding: 0;
+
+    @media (max-width: $mobile) {
+        @include size($btn-circle-size-mobile);
+    }
+
+    &:before {
+        @include center();
+        @include size($btn-circle-size);
+
+        content: "";
+        background-color: rgba($color: $red, $alpha: .12);
+        border-radius: 50%;
+        transition: transform .5s;
+
+        @media (max-width: $mobile) {
+            @include size($btn-circle-size-mobile);
+        }
+    }
+
+    &:after {        
+        @extend %ic;
+        @include center();
+
+        content: "\e976";
+        padding-left: .4rem;
+        color: $white;
+        font-size: 1.6rem;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+        &:before {
+            transform: translate(-50%, -50%) scale(1.5);
+        }
+    }
+}
+
+//Button sizes
+
+.btn-lg {
+    height: 5.2rem;
+    padding: 0 3.9rem;
+    font-size: 1.6rem;
+    
+    @media (max-width: $desktop){
+        height: 4.4rem;
+        padding: 0 3.1rem;
+        font-size: 1.4rem;
+    }
+
+    @media (max-width: $mobile){
+        height: 3.6rem;
+        padding: 0 2.3rem;
+        font-size: 1.2rem;
+    }
+}
+
+.btn-sm {
+    height: 3.6rem;
+    padding: 0 2.3rem;
+    font-size: 1.2rem;
+}

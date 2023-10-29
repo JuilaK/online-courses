@@ -1,0 +1,18 @@
+.our-team {
+    margin-top: -16.4rem;
+    padding-bottom: 9rem;
+    padding-top: 16.6rem;
+    background-color: $gray-200;
+
+    @media (max-width: $desktop) {
+        margin-top: -10rem;
+        padding-bottom: 5rem;
+        padding-top: 10rem;
+    }
+
+    @media (max-width: $tablet) {
+        margin-top: 0;
+        padding-bottom: 3rem;
+        padding-top: 6rem;
+    }    
+}
